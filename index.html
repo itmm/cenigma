@@ -1,0 +1,69 @@
+<div><div>
+<code>
+<span class="macro">@Def(<span class="name">file: cenigma.cpp</span>)</span><br/>
+<span class="in1"></span><span class="keyword">#include</span> &lt;<span class="var">iostream</span>&gt;<br/>
+<span class="in1"></span><span class="macro">@put(<span class="name">globals</span>)</span>;<br/>
+<span class="in1"></span><span class="type">int</span> <span class="fn">main</span>(<br/>
+<span class="in2"></span><span class="type">int</span> <span class="var">argc</span>, <span class="type">const</span> <span class="type">char</span> *<span class="var">argv</span>[]<br/>
+<span class="in1"></span>) {<br/>
+<span class="in2"></span><span class="macro">@put(<span class="name">main</span>)</span><br/>
+<span class="in1"></span>}<br/>
+<span class="macro">@End(<span class="name">file: cenigma.cpp</span>)</span><br/>
+</code></div>
+</div>
+<div><div>
+<code>
+<span class="macro">@def(<span class="name">main</span>)</span><br/>
+<span class="in1"></span><span class="macro">@put(<span class="name">unit-tests</span>)</span>;<br/>
+<span class="macro">@end(<span class="name">main</span>)</span><br/>
+</code></div>
+</div>
+<div><div>
+<code>
+<span class="macro">@add(<span class="name">main</span>)</span><br/>
+<span class="in1"></span><span class="macro">@put(<span class="name">parse args</span>)</span>;<br/>
+<span class="macro">@end(<span class="name">main</span>)</span><br/>
+</code></div>
+</div>
+<div><div>
+<code>
+<span class="macro">@def(<span class="name">globals</span>)</span><br/>
+<span class="in1"></span><span class="macro">@put(<span class="name">encode prereqs</span>)</span>;<br/>
+<span class="in1"></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="type">char</span> <span class="fn">encode</span>(<span class="type">char</span> <span class="var">c</span>) {<br/>
+<span class="in2"></span><span class="macro">@put(<span class="name">encode</span>)</span>;<br/>
+<span class="in2"></span><span class="keyword">return</span> <span class="var">c</span>;<br/>
+<span class="in1"></span>}<br/>
+<span class="macro">@end(<span class="name">globals</span>)</span><br/>
+</code></div>
+</div>
+<div><div>
+<code>
+<span class="macro">@add(<span class="name">main</span>)</span><br/>
+<span class="in1"></span><span class="type">char</span> <span class="var">c</span>;<br/>
+<span class="in1"></span><span class="keyword">while</span> (<span class="type">std</span>::<span class="var">cin</span>.<span class="fn">get</span>(<span class="var">c</span>)) {<br/>
+<span class="in2"></span><span class="type">std</span>::<span class="var">cout</span> &lt;&lt; <span class="fn">encode</span>(<span class="var">c</span>);<br/>
+<span class="in1"></span>}<br/>
+<span class="macro">@end(<span class="name">main</span>)</span><br/>
+</code></div>
+</div>
+<div><div>
+<code>
+<span class="macro">@def(<span class="name">encode prereqs</span>)</span><br/>
+<span class="in1"></span><span class="keyword">static</span> <span class="type">char</span> <span class="fn">plugboard</span>(<span class="type">char</span> <span class="var">c</span>) {<br/>
+<span class="in2"></span><span class="macro">@put(<span class="name">plugboard</span>)</span>;<br/>
+<span class="in2"></span><span class="keyword">return</span> <span class="var">c</span>;<br/>
+<span class="in1"></span>}<br/>
+<span class="macro">@end(<span class="name">encode prereqs</span>)</span><br/>
+</code></div>
+</div>
+<div><div>
+<code>
+<span class="macro">@def(<span class="name">encode</span>)</span><br/>
+<span class="in1"></span><span class="var">c</span> = <span class="fn">plugboard</span>(<span class="var">c</span>);<br/>
+<span class="in1"></span><span class="macro">@put(<span class="name">rotors</span>)</span>;<br/>
+<span class="in1"></span><span class="var">c</span> = <span class="fn">plugboard</span>(<span class="var">c</span>);<br/>
+<span class="macro">@end(<span class="name">encode</span>)</span><br/>
+</code></div>
+</div>
+</body>
+</html>
